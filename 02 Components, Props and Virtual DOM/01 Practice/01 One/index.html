@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://www.unpkg.com/react@18.2.0/umd/react.development.js"></script>
+    <script src="https://www.unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+</body>
+<script type="text/babel" >
+    
+// calling with the help of props
+
+    function Button({text, btn} ) {
+ return(
+    <button style={{backgroundColor:'orange'}} onClick={btn}>{text}</button>
+ )
+}
+
+function App() {
+return(
+     <div>
+        <p>Hello</p>
+         
+         
+        <Button text="click me" btn={()=>alert('click me')} />
+        <Button text="hover me" btn={()=>alert('hover me')} />
+        <Button text=" ho gya" btn={()=>alert('ho gya')} />
+        </div>
+)
+}
+
+const reactRoot = ReactDOM.createRoot(document.getElementById('root'))
+reactRoot.render(<App/>)
+  </script>
+</html>
