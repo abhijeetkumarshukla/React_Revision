@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dynamic List Rendering</title>
+</head>
+<body>
+  <div id="root"></div>
+  <script src="https://www.unpkg.com/react@18.2.0/umd/react.development.js"></script>
+  <script src="https://www.unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script type="text/babel">
+  
+   function Gallery({children}){
+      return(
+       <div style={{display:'grid', gridTemplateColumns:'repeat(2,1fr)',
+       width:'80%', margin:'auto', gap:'20px'}}>  
+       {children}
+        </div>
+      )
+   }
+   function Image({src}){
+    return(
+        <img src={src}  style={{ width:'100%', height:'auto'}}/>
+    )
+   }
+   
+        
+
+   const root = ReactDOM.createRoot(document.getElementById("root"));
+   root.render( 
+    <Gallery>
+           <Image src="https://tse4.mm.bing.net/th?id=OIP.xO4wxl90gDS8dYBfGCOoAwHaEK&pid=Api&P=0&h=180"/>
+           <Image src="https://tse3.mm.bing.net/th?id=OIP.epogCQeMuFDvrVXtAWlY8QHaE8&pid=Api&P=0&h=180"/>
+           <Image src="https://tse2.mm.bing.net/th?id=OIP.2_vozNhhnhuplUgdytoiPAHaE8&pid=Api&P=0&h=180" />
+           <Image src="https://tse3.mm.bing.net/th?id=OIP.Vog6qXR7LGgWGOSoAnjGhAHaE8&pid=Api&P=0&h=180 " />
+           <Image src=" https://tse3.mm.bing.net/th?id=OIP.KRqSGfbIpHZ7HbYEwvl-IQHaE6&pid=Api&P=0&h=180" />
+           <Image src="https://tse1.mm.bing.net/th?id=OIP.GsZNpXiG7VLuh0Ng-QlvOQHaEg&pid=Api&P=0&h=180" />
+           <Image src="https://tse3.mm.bing.net/th?id=OIP.tpgzP02geeKGlVT9JrG2aAHaE8&pid=Api&P=0&h=180" />
+           <Image src="https://tse3.mm.bing.net/th?id=OIP.ewsNwgMrfIj9qY5EdRMhowHaEK&pid=Api&P=0&h=180" />
+    </Gallery>
+
+   );
+
+  </script>
+</body>
+</html>
