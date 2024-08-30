@@ -1,0 +1,57 @@
+<!-- Toggle  -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://www.unpkg.com/react@18.2.0/umd/react.development.js"></script>
+    <script src="https://www.unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    
+    <div id="root"></div>
+
+    <script type="text/babel" >
+
+    function ColorPicker(){
+      const [color, setColor] = React.useState('')
+
+      const pickcolor=(e)=>{
+         if(/^#[0-9A-F]{6}$/i.test(event.target.value)){
+            setColor(e.target.value)
+         }
+         else{
+            setColor('error')
+         }
+      }
+
+      return(
+        <div>
+         <input type="text" placeholder="Choose Hex" onChange={pickcolor}
+         style={{
+             margin:'20px 0 0 570px',
+              padding:"10px" , textAlign:"center"}}/>    
+
+         {color==="Error"?<p>Error HEX Color Value</p>:
+                <div style={{backgroundColor:color,width:"400px", height:"400px" ,margin:"30px auto"}}> 
+                    </div>}
+        </div>
+      )
+    }
+     
+     
+    
+    const reactRoot = ReactDOM.createRoot(document.getElementById('root'))
+    reactRoot.render(<ColorPicker/>)
+      </script>
+</body>
+ 
+
+
+ 
+</html>
