@@ -1,11 +1,13 @@
 import './App.css'
-import Counter from './Pages/Counter'
+import NameForm from './Pages/form/NameForm'
+// import Counter from './Pages/Counter'
 
 function App() { 
 
   return (
     <>
-     <Counter/>
+     {/* <Counter/> */}
+     <NameForm/>
     </>
   )
 }
