@@ -1,5 +1,9 @@
 import './App.css'
-import NameForm from './Pages/form/NameForm'
+import LoginPage from './Pages/form/LoginPage'
+// import Useform from './Useform'
+// import Toggle1 from './Toggle1'
+// import Toggle from './Pages/Toggle'
+// import NameForm from './Pages/form/NameForm'
 // import Counter from './Pages/Counter'
 
 function App() { 
@@ -7,7 +11,11 @@ function App() {
   return (
     <>
      {/* <Counter/> */}
-     <NameForm/>
+     {/* <NameForm/> */}
+     {/* <Toggle/> */}
+     {/* <Toggle1/> */}
+     {/* <Useform/> */}
+     <LoginPage/>
     </>
   )
 }
