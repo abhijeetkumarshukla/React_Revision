@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Template</title>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+  <script src="https://www.unpkg.com/react@18.2.0/umd/react.development.js"></script>
+  <script src="https://www.unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script type="text/babel">
+
+function App() {
+        const [hobbies, setHobbies] = React.useState([""]);
+
+        const addHobby = () => {
+          setHobbies([...hobbies, ""]);
+        };
+
+        const removeHobby = (i) => {
+          if (i !== 0) {
+            const newHobbies = [...hobbies];
+            newHobbies.splice(i, 1);
+            setHobbies(newHobbies);
+          }
+        };
+
+        const changeHobby = (value, i) => {
+          const newHobbies = [...hobbies];
+          newHobbies[i] = value;
+          setHobbies(newHobbies);
+        };
+
+        const submit = () => {
+          console.log(hobbies);
+        };
+
+        return (
+          <div  style={{
+            marginTop:"50px",
+             textAlign:"center",
+              marginRight:"10px" }}>
+            {hobbies.map((hobby, i) => (
+              <div key={i}>
+                <input style={{margin:"20px", }}
+                  type="text"
+                  placeholder="Search"
+                  value={hobby}
+                  onChange={(event) => changeHobby(event.target.value, i)}
+                />
+                <button onClick={() => removeHobby(i)}>Remove</button>
+              </div>
+            ))}
+            <button onClick={addHobby}  style={{margin:"0 20px 0 10px"}}>Add</button>
+            <button onClick={submit}>Submit</button>
+          </div>
+        );
+      }
+
+      let root = ReactDOM.createRoot(document.getElementById("root"));
+      root.render(<App />);
+
+
+
+
+
+
+
+      
+    //   function Form(){
+
+    //     return(
+    //         <form >
+                
+    //             <input type="text" placeholder='Hobby' onChange={(e)=>} />
+
+    //             <button >add hobby</button>
+    //             </form>
+    //     )
+    //   } 
+
+    // const reactRoot = ReactDOM.createRoot(document.getElementById('root'))
+    // reactRoot.render(<Form/>)
+  </script>
+</html>
