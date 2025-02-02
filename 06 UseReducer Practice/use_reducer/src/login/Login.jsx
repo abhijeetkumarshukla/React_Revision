@@ -31,7 +31,7 @@ const Login = () => {
     <div>
       <form onSubmit={handleSubmit} >
         <input type="email" placeholder="Type Email" onChange={(e)=>dispatch({type:'email',payload: e.target.value})} />
-        <input type="password" placeholder="Type Password" onChange={(e)=> dispatch({type:'email',payload: e.target.value})}  />
+        <input type="password" placeholder="Type Password" onChange={(e)=> dispatch({type:'password',payload: e.target.value})}  />
         <button type="submit">Login</button>
       </form>
     </div>

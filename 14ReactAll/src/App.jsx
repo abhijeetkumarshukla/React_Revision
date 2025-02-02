@@ -1,11 +1,10 @@
-
-import ApiCall from '../pages/ApiCall'
+import SignWithAPI from '../pages/SignWithAPI'
 import './App.css'
 
 function App() {
   return(
     <>
-    <ApiCall/>
+      <SignWithAPI/>
     </>
 
   )
