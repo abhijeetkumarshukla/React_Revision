@@ -13,7 +13,6 @@ const Todo = () => {
     setTodos(todos.filter((_, i) => i !== index));
   };
 
-  
   const editTodo = (index) => {
     setTask(todos[index]);
   };
